@@ -15,11 +15,11 @@ var SayiCevir = {
 
         if (sayi.indexOf(',') > 0) {
             sayi = sayi.split(',');
-            var tam = this.cevir2(sayi[0]);
-            var ondalik = this.cevir2(sayi[1]);
             if (sayi[0].length > 18 || sayi[1].length > 18) {
                 return 'Sayılar tam veya ondalıklı kısım ayrı olarak enfazla 18 basamaklı olabilir !';
             }
+            var tam = this.cevir2(sayi[0]);
+            var ondalik = this.cevir2(sayi[1]);
             return tam + ' tl ' + ondalik + ' kuruş';
         } else {
             if (sayi.length > 18) {
