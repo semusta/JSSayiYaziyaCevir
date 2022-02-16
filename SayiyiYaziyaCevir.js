@@ -17,10 +17,19 @@ var SayiCevir = {
             sayi = sayi.split(',');
             var tam = this.cevir2(sayi[0]);
             var ondalik = this.cevir2(sayi[1]);
+            if (sayi[0].length > 18 || sayi[1].length > 18) {
+                return 'Sayılar tam veya ondalıklı kısım ayrı olarak enfazla 18 basamaklı olabilir !';
+            }
             return tam + ' tl ' + ondalik + ' kuruş';
+        } else {
+            if (sayi.length > 18) {
+                return 'Sayılar tam veya ondalıklı kısım ayrı olarak enfazla 18 basamaklı olabilir !';
+            }
+
+            return this.cevir2(sayi) + ' tl';
         }
 
-        return this.cevir2(sayi) + ' tl';
+
     },
 
     /**
@@ -102,5 +111,6 @@ console.log(SayiCevir.cevir('1541510101510'));
 console.log(SayiCevir.cevir('1000100100100'));
 console.log(SayiCevir.cevir('123456,12'));
 console.log(SayiCevir.cevir('1234a56,12')); // hatalı kullanım
+console.log(SayiCevir.cevir('100000000000000000,123')); // hatalı kullanım
 
 
